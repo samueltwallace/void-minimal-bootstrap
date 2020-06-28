@@ -1,6 +1,6 @@
 # Void Linux Base Install- My Bootstrap
 
-![Void Linux](Documents/VoidLogo.png)
+![Void Linux](./Documents/VoidLogo.png)
 
 This is my bootstrap for Void Linux that I plan to deploy on my machine very soon! I haven't tested this out yet, so buyer beware! It's planned to be used on a machine with a fresh Void Linux Base install with nothing but git installed (for pulling down my files). Here's the contents:
 
