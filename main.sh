@@ -3,6 +3,7 @@
 
 echo "If you've gotten this far, you probably have git installed. If not, quit and do that now!"
 
+sudo xbps-install -Su
 cd $HOME
 GITURL="https://github.com/samueltwallace/void-minimal-bootstrap.git"
 git clone $GITURL # makes folder void-minimal-bootstrap
@@ -49,12 +50,15 @@ cp $HOME/void-minimal-bootstrap/Desktop/polybar.config $HOME/.config/poybar/conf
 cp $HOME/void-minimal-bootstrap/Desktop/compton.conf $HOME/.config/compton.conf
 cp $HOME/void-minimal-bootstrap/Desktop/SolidBlack.png $HOME/Pictures/SolidBlack.png
 
-# Change shell to zsh
-chsh -s /bin/zsh
 
 echo "Enter 0 when zsh prompts, then exit. Press Enter when ready to continue"
+echo ' '
+echo ' '
 read PLACEHOLDER
 zsh
+
+# Change shell to zsh
+chsh -s /bin/zsh
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
