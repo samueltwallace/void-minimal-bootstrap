@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Touchpad properties
+xinput set-prop 13 "Natural Scrolling Enabled" 1 # Natural Scrolling
+xinput set-prop 13 "Tapping Enabled" 1 # Tap to click
+
+
+sxhkd &
+polybar --reload bspwm &
+compton &
+
+bspc monitor -d I II III IV V 
+
+
+bspc config border_width        0 #2
+bspc config window_gap          10
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+
+
+
+wal --theme base16-gruvbox-hard
+feh --bg-fill $HOME/Pictures/SolidBlack.png

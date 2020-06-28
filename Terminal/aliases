@@ -1,0 +1,8 @@
+alias gcom="git add . && git commit -m "
+alias :q='exit'
+alias rmz='rm "$(find * | fzf)"'
+alias colorscheme='wal --preview'
+alias refresh='exec $SHELL -l'
+alias topz='echo "    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+" && top -b -n 1 | fzf'
+alias clc='clear'
+alias music='ncmpcpp'
