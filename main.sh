@@ -32,9 +32,9 @@ sudo xbps-install xdg-user-dirs
 sudo xbps-install xorg
 sudo xbps-install zathura
 sudo xbps-install zsh
-sudo xpbs-install compton
-sudo xpbs-install curl
-sudo xpbs-install neovim
+sudo xbps-install compton
+sudo xbps-install curl
+sudo xbps-install neovim
 
 
 # Put in home directories
@@ -47,6 +47,7 @@ mkdir bspwm
 mkdir sxhkd
 mkdir nvim
 mkdir alacritty
+mkdir polybar
 
 # Create configs
 BOOTSTRAP_REPO="$(find $HOME -name void-minimal-bootstrap)"
@@ -56,27 +57,33 @@ cp -r ./Desktop/rofi/ $HOME/.config/
 cp ./Desktop/SolidBlack.png $HOME/Pictures/SolidBlack.png
 cp ./Desktop/bspwmrc $HOME/.config/bspwm/
 cp ./Desktop/compton.conf $HOME/.config/compton.conf
-cp ./Desktop/polybar.config $HOME/.config/poybar/config
-cp ./Desktop/sxhkdrc $HOME/.config/sxhkdrc
+cp ./Desktop/polybar.config $HOME/.config/polybar/config
+cp ./Desktop/sxhkdrc $HOME/.config/sxhkd/
 cp ./Terminal/aliases $HOME/.aliases
 cp ./Terminal/nvim/commands.vim $HOME/.config/nvim/commands.vim
+cp ./Terminal/nvim/vimplug.vim $HOME/.config/nvim/vimplug.vim
 cp ./Terminal/nvim/init.vim $HOME/.config/nvim/init.vim
 cp ./Terminal/nvim/interface.vim $HOME/.config/nvim/interface.vim
-cp ./Terminal/zshrc $HOME/.zshrc
+cp ./Desktop/xinitrc $HOME/.xinitrc
 
 git clone https://github.com/GideonWolfe/Zathura-Pywal.git
 cd Zathura-Pywal
 ./install.sh
 cd ..
 
+chmod +x bspwm/bspwmrc
+
 echo "Enter 0 when zsh prompts, then exit. Press Enter when ready to continue"
 echo ' '
 echo ' '
 read PLACEHOLDER
-zsh
-
-# Change shell to zsh
-chsh -s /bin/zsh
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp -f ./Terminal/zshrc $HOME/.zshrc
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim -es :PlugInstall
+
+curl -o $HOME/.oh-my-zsh/themes/gitster.zsh-theme https://raw.githubusercontent.com/shashankmehta/dotfiles/master/thesetup/zsh/.oh-my-zsh/custom/themes/gitster.zsh-theme
