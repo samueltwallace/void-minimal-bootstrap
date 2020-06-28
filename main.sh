@@ -66,10 +66,15 @@ cp ./Terminal/nvim/commands.vim $HOME/.config/nvim/commands.vim
 cp ./Terminal/nvim/init.vim $HOME/.config/nvim/init.vim
 cp ./Terminal/nvim/interface.vim $HOME/.config/nvim/interface.vim
 cp ./Terminal/nvim/vimplug.vim $HOME/.config/nvim/vimplug.vim
+
+
+
+
+cp ./Desktop/VoidLogo.png /usr/share/pixmaps/
+cp ./Desktop/lightdm-gtk-greeter.conf /etc/lightdm
+
+
 git clone https://github.com/GideonWolfe/Zathura-Pywal.git
-
-
-
 cd Zathura-Pywal
 ./install.sh
 cd ..
