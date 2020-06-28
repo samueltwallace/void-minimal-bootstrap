@@ -5,8 +5,6 @@ echo "If you've gotten this far, you probably have git installed. If not, quit a
 
 sudo xbps-install -Su
 cd $HOME
-GITURL="https://github.com/samueltwallace/void-minimal-bootstrap.git"
-git clone $GITURL # makes folder void-minimal-bootstrap
 
 # INSTALL 
 sudo xbps-install xorg
@@ -42,14 +40,24 @@ mkdir nvim
 mkdir alacritty
 
 # Create configs
-cp $HOME/void-minimal-bootstrap/Terminal/aliases $HOME/.aliases
-cp $HOME/void-minimal-bootstrap/Terminal/zshrc $HOME/.zshrc
-cp $HOME/void-minimal-bootstrap/Desktop/bspwmrc $HOME/.config/bspwm/
-cp $HOME/void-minimal-bootstrap/Desktop/sxhkdrc $HOME/.config/sxhkdrc
-cp $HOME/void-minimal-bootstrap/Desktop/polybar.config $HOME/.config/poybar/config
-cp $HOME/void-minimal-bootstrap/Desktop/compton.conf $HOME/.config/compton.conf
-cp $HOME/void-minimal-bootstrap/Desktop/SolidBlack.png $HOME/Pictures/SolidBlack.png
+BOOTSTRAP_REPO="$(find $HOME -name void-minimal-bootstrap)"
+cd $BOOTSTRAP_REPO
 
+cp ./Terminal/aliases $HOME/.aliases
+cp ./Terminal/zshrc $HOME/.zshrc
+cp ./Desktop/bspwmrc $HOME/.config/bspwm/
+cp ./Desktop/sxhkdrc $HOME/.config/sxhkdrc
+cp ./Desktop/polybar.config $HOME/.config/poybar/config
+cp ./Desktop/compton.conf $HOME/.config/compton.conf
+cp ./Desktop/SolidBlack.png $HOME/Pictures/SolidBlack.png
+cp ./Terminal/nvim/init.vim $HOME/.config/nvim/init.vim
+cp ./Terminal/nvim/commands.vim $HOME/.config/nvim/commands.vim
+cp ./Terminal/nvim/interface.vim $HOME/.config/nvim/interface.vim
+
+git clone https://github.com/GideonWolfe/Zathura-Pywal.git
+cd Zathura-Pywal
+./install.sh
+cd ..
 
 echo "Enter 0 when zsh prompts, then exit. Press Enter when ready to continue"
 echo ' '
