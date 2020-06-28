@@ -4,14 +4,14 @@
 
 # terminal emulator
 super + Return
-	alacritty --config-file "$HOME/.config/alacritty/alacritty-bspwm.yml"
+	alacritty
 
 # program launcher
 super + semicolon
 	rofi -show run
 
 super + shift + Return
-	gtk-launch $(xdg-settings get default-web-browser)
+	firefox
 
 # make sxhkd reload its configuration files:
 super + shift + c
@@ -153,13 +153,13 @@ XF86AudioMicMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 XF86AudioNext  
-	mpc --host=127.0.0.1 --port=6680 next  
+	mpc next  
 
 XF86AudioPrev  
-	mpc --host=127.0.0.1 --port=6680 prev  
+	mpc prev  
 
 XF86AudioPlay  
-	mpc --host=127.0.0.1 --port=6680 toggle  
+	mpc toggle  
 
 
 
