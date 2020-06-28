@@ -11,6 +11,8 @@ cd $HOME
 sudo xbps-install ImageMagick
 sudo xbps-install alacritty
 sudo xbps-install bspwm
+sudo xbps-install compton
+sudo xbps-install curl
 sudo xbps-install feh
 sudo xbps-install firefox
 sudo xbps-install font-hack-ttf
@@ -18,7 +20,9 @@ sudo xbps-install fzf
 sudo xbps-install i3lock-fancy
 sudo xbps-install julia
 sudo xbps-install lightdm
+sudo xbps-install lightdm-gtk3-greeter
 sudo xbps-install neofetch
+sudo xbps-install neovim
 sudo xbps-install polybar
 sudo xbps-install pulseaudio
 sudo xbps-install python
@@ -32,10 +36,6 @@ sudo xbps-install xdg-user-dirs
 sudo xbps-install xorg
 sudo xbps-install zathura
 sudo xbps-install zsh
-sudo xbps-install compton
-sudo xbps-install curl
-sudo xbps-install neovim
-
 
 # Put in home directories
 xdg-user-dirs-update
@@ -53,20 +53,23 @@ mkdir polybar
 BOOTSTRAP_REPO="$(find $HOME -name void-minimal-bootstrap)"
 cd $BOOTSTRAP_REPO
 
+
 cp -r ./Desktop/rofi/ $HOME/.config/
 cp ./Desktop/SolidBlack.png $HOME/Pictures/SolidBlack.png
 cp ./Desktop/bspwmrc $HOME/.config/bspwm/
 cp ./Desktop/compton.conf $HOME/.config/compton.conf
 cp ./Desktop/polybar.config $HOME/.config/polybar/config
 cp ./Desktop/sxhkdrc $HOME/.config/sxhkd/
+cp ./Desktop/xinitrc $HOME/.xinitrc
 cp ./Terminal/aliases $HOME/.aliases
 cp ./Terminal/nvim/commands.vim $HOME/.config/nvim/commands.vim
-cp ./Terminal/nvim/vimplug.vim $HOME/.config/nvim/vimplug.vim
 cp ./Terminal/nvim/init.vim $HOME/.config/nvim/init.vim
 cp ./Terminal/nvim/interface.vim $HOME/.config/nvim/interface.vim
-cp ./Desktop/xinitrc $HOME/.xinitrc
-
+cp ./Terminal/nvim/vimplug.vim $HOME/.config/nvim/vimplug.vim
 git clone https://github.com/GideonWolfe/Zathura-Pywal.git
+
+
+
 cd Zathura-Pywal
 ./install.sh
 cd ..
@@ -87,3 +90,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim -es :PlugInstall
 
 curl -o $HOME/.oh-my-zsh/themes/gitster.zsh-theme https://raw.githubusercontent.com/shashankmehta/dotfiles/master/thesetup/zsh/.oh-my-zsh/custom/themes/gitster.zsh-theme
+
+
+sudo ln -s /etc/sv/dbus /var/service/dbus
+sudo ln -s /etc/sv/lightdm /var/service/lightdm
+sudo reboot
