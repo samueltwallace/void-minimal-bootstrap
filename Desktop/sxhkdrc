@@ -10,6 +10,12 @@ super + Return
 super + semicolon
 	rofi -show run
 
+super + shift + z
+	$HOME/.config/rofi/pdf.sh
+
+super + shift + w
+	$HOME/.config/rofi/wifi.sh
+
 super + shift + Return
 	firefox
 
@@ -141,16 +147,13 @@ super + {Left,Down,Up,Right}
 # Audio Commands
 
 XF86AudioRaiseVolume  
-	pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioLowerVolume  
-	pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 XF86AudioMute  
-	pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-
-XF86AudioMicMute  
-	pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 XF86AudioNext  
 	mpc next  

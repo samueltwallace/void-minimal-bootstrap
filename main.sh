@@ -11,7 +11,7 @@ cd $HOME
 sudo xbps-install ImageMagick
 sudo xbps-install alacritty
 sudo xbps-install bspwm
-sudo xbps-install compton
+sudo xbps-install picom
 sudo xbps-install curl
 sudo xbps-install feh
 sudo xbps-install firefox
@@ -80,6 +80,8 @@ cd Zathura-Pywal
 cd ..
 
 chmod +x bspwm/bspwmrc
+chmod +x rofi/wifi.sh
+chmod +x rofi/pdf.sh
 
 echo "Enter 0 when zsh prompts, then exit. Press Enter when ready to continue"
 echo ' '
