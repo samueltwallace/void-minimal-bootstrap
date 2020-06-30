@@ -97,8 +97,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim -es :PlugInstall
 
 curl -o $HOME/.oh-my-zsh/themes/gitster.zsh-theme https://raw.githubusercontent.com/shashankmehta/dotfiles/master/thesetup/zsh/.oh-my-zsh/custom/themes/gitster.zsh-theme
+git clone https://www.github.com/brokendisk/dune-quotes.git ~/.oh-my-zsh/custom/plugins/dune-quotes
 
-
-sudo ln -s /etc/sv/dbus /var/service/dbus
 sudo ln -s /etc/sv/lightdm /var/service/lightdm
+sudo ln -s /etc/sv/dbus /var/service/dbus
 sudo reboot
