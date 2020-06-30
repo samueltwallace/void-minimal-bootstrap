@@ -10,6 +10,8 @@ cd $HOME
 
 sudo xbps-install ImageMagick
 sudo xbps-install alacritty
+sudo xbps-install alsa
+sudo xbps-install alsa-utils
 sudo xbps-install bspwm
 sudo xbps-install picom
 sudo xbps-install curl
