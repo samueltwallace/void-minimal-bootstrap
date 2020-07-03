@@ -72,8 +72,8 @@ cp ./Terminal/nvim/vimplug.vim $HOME/.config/nvim/vimplug.vim
 
 
 
-cp ./Desktop/VoidLogo.png /usr/share/pixmaps/
-cp ./Desktop/lightdm-gtk-greeter.conf /etc/lightdm
+sudo cp ./Desktop/VoidLogo.png /usr/share/pixmaps/
+sudo cp ./Desktop/lightdm-gtk-greeter.conf /etc/lightdm
 
 
 git clone https://github.com/GideonWolfe/Zathura-Pywal.git
