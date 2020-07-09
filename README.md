@@ -2,7 +2,7 @@
 
 ![Void Linux](./Desktop/VoidLogo.png)
 
-This is my bootstrap for Void Linux that I plan to deploy on my machine very soon! I haven't tested this out yet, so buyer beware! It's planned to be used on a machine with a fresh Void Linux Base install with nothing but git installed (for pulling down my files). Here's the contents:
+This is my bootstrap for Void Linux that I have deployed on my machine. It's intended to be used on a machine with a fresh Void Linux Base install with nothing but git installed (for pulling down these files). Here's the contents:
 
 ### Applications
 
@@ -34,4 +34,3 @@ This is my bootstrap for Void Linux that I plan to deploy on my machine very soo
 
 1. Texlive
 2. Python3
-3. Julia programming language
