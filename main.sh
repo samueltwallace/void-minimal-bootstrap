@@ -13,22 +13,24 @@ sudo xbps-install alacritty
 sudo xbps-install alsa
 sudo xbps-install alsa-utils
 sudo xbps-install bspwm
-sudo xbps-install picom
 sudo xbps-install curl
 sudo xbps-install feh
+sudo xbps-install ffmpeg
 sudo xbps-install firefox
 sudo xbps-install font-hack-ttf
 sudo xbps-install fzf
 sudo xbps-install i3lock-fancy
-sudo xbps-install julia
 sudo xbps-install lightdm
 sudo xbps-install lightdm-gtk3-greeter
 sudo xbps-install neofetch
 sudo xbps-install neovim
+sudo xbps-install nodejs
+sudo xbps-install picom
 sudo xbps-install polybar
 sudo xbps-install pulseaudio
 sudo xbps-install python
 sudo xbps-install python3
+sudo xbps-install python3-devel
 sudo xbps-install python3-pip
 sudo xbps-install pywal
 sudo xbps-install rofi
@@ -38,6 +40,10 @@ sudo xbps-install xdg-user-dirs
 sudo xbps-install xorg
 sudo xbps-install zathura
 sudo xbps-install zsh
+
+pip3 install pynvim
+
+sudo npm install -g neovim
 
 # Put in home directories
 xdg-user-dirs-update
@@ -85,10 +91,10 @@ chmod +x bspwm/bspwmrc
 chmod +x rofi/wifi.sh
 chmod +x rofi/pdf.sh
 
-echo "Enter 0 when zsh prompts, then exit. Press Enter when ready to continue"
-echo ' '
-echo ' '
-read PLACEHOLDER
+# echo "Enter 0 when zsh prompts, then exit. Press Enter when ready to continue"
+# echo ' '
+# echo ' '
+# read PLACEHOLDER
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
