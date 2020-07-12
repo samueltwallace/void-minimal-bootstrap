@@ -32,7 +32,6 @@ This is my bootstrap for Void Linux that I plan to deploy on my machine very soo
 
 ### Running
 
-<<<<<<< HEAD
 All you need to do is go into a subdirectory of your $HOME and
 
 ```
@@ -48,4 +47,3 @@ Forking encouraged!
 1. Texlive
 2. Python3
 3. Julia programming language
->>>>>>> parent of 372e759... updated readme to reflect I have run this on my machine
