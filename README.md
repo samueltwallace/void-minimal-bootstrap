@@ -43,7 +43,3 @@ bash main.sh
 During part of the installation, you *should* make Zsh your default shell.
 
 Forking encouraged! 
-=======
-1. Texlive
-2. Python3
-3. Julia programming language
