@@ -19,9 +19,11 @@ sudo xbps-install ffmpeg
 sudo xbps-install firefox
 sudo xbps-install font-hack-ttf
 sudo xbps-install fzf
+sudo xbps-install gcc
 sudo xbps-install i3lock-fancy
 sudo xbps-install lightdm
 sudo xbps-install lightdm-gtk3-greeter
+sudo xbps-install make
 sudo xbps-install neofetch
 sudo xbps-install neovim
 sudo xbps-install nodejs
@@ -33,15 +35,21 @@ sudo xbps-install python3
 sudo xbps-install python3-devel
 sudo xbps-install python3-pip
 sudo xbps-install pywal
+sudo xbps-install ripgrep
 sudo xbps-install rofi
+sudo xbps-install ruby
+sudo xbps-install scrot
 sudo xbps-install sxhkd
 sudo xbps-install texlive-bin
+sudo xbps-install vifm
 sudo xbps-install xdg-user-dirs
 sudo xbps-install xorg
+sudo xbps-install xsel
 sudo xbps-install zathura
+sudo xbps-install zathura-pdf-poppler
 sudo xbps-install zsh
 
-pip3 install pynvim
+sudo pip3 install pynvim
 
 sudo npm install -g neovim
 
@@ -81,20 +89,21 @@ cp ./Terminal/nvim/vimplug.vim $HOME/.config/nvim/vimplug.vim
 sudo cp ./Desktop/VoidLogo.png /usr/share/pixmaps/
 sudo cp ./Desktop/lightdm-gtk-greeter.conf /etc/lightdm
 
-
+cd ..
 git clone https://github.com/GideonWolfe/Zathura-Pywal.git
 cd Zathura-Pywal
 ./install.sh
 cd ..
 
+git clone https://github.com/powerline/font.git --depth=1
+fonts/install.sh
+ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/70-no-bitmaps.conf
+fc-cache -fv
+
 chmod +x bspwm/bspwmrc
 chmod +x rofi/wifi.sh
 chmod +x rofi/pdf.sh
 
-# echo "Enter 0 when zsh prompts, then exit. Press Enter when ready to continue"
-# echo ' '
-# echo ' '
-# read PLACEHOLDER
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

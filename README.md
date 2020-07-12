@@ -30,7 +30,16 @@ This is my bootstrap for Void Linux that I have deployed on my machine. It's int
 6. Oh-My-Zsh
 7. Fzf
 
-### Programming, School Stuff, etc.
+### Running
 
-1. Texlive
-2. Python3
+All you need to do is go into a subdirectory of your $HOME and
+
+```
+git clone https://github.com/samueltwallace/void-minimal-bootstrap.git
+cd void-minimal-bootstrap
+bash main.sh
+```
+
+During part of the installation, you *should* make Zsh your default shell.
+
+Forking encouraged! 
